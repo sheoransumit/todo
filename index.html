@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h3>Task Manager</h3>
+    <form id="myForm">
+    <div class="row">
+      <div class= "col-3"><input type="text" name="title" placeholder="Title*" required></div>
+      <div class= "col-3"><input type="date" name="duedate" placeholder="Due Date*" required></div>
+      <div class= "col-3">    
+        <select id="employeeList">
+          <option value="none" name="member">Select Employee</option>
+        </select> 
+      </div>
+      <div class= "col-3">
+        <select id="statusMarker">
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10"><textarea name="description" rows="3" placeholder="Describe project here..."></textarea></div>
+      <div class="col-2">
+        <button onclick="save()">Save</button>
+        <p>*required</p>
+      </div>
+    </div>
+    </form>
+    <div class="row">
+      <div class="col-12">
+        <ul class="tab">
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'pending')" id="defaultOpen">Pending</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'doing')">Doing</a></li>
+          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'done')">Done</a></li>
+        </ul>
+        <div id="pending" class="tabcontent">
+          <table>
+            <thead>
+              <tr>
+                <th class="due">Date</th>
+                <th class="title">Title</th>
+                <th class="employee">Assigned To</th>
+                <th class="desc">Description</th>
+                <th class="options">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="due"></td>
+                <td class="title"></td>
+                <td class="employee"></td>
+                <td class="desc"></td>
+                <td class="options"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="doing" class="tabcontent">
+          <table>
+            <thead>
+              <tr>
+                <th class="due">Date</th>
+                <th class="title">Title</th>
+                <th class="employee">Assigned To</th>
+                <th class="desc">Description</th>
+                <th class="options">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="due"></td>
+                <td class="title"></td>
+                <td class="employee"></td>
+                <td class="desc"></td>
+                <td class="options"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="done" class="tabcontent">  
+          <table>
+            <thead>
+              <tr>
+                <th class="due">Date</th>
+                <th class="title">Title</th>
+                <th class="employee">Assigned To</th>
+                <th class="desc">Description</th>
+                <th class="options">Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="due"></td>
+                <td class="title"></td>
+                <td class="employee"></td>
+                <td class="desc"></td>
+                <td class="options"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

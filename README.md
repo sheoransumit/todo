@@ -1,3 +1,6 @@
+# prerequisite
+Read HTML, CSS, JS from w3school and https://help.github.com/articles/set-up-git/ and lookup git init, clone, add, commmit, push, https://git-scm.com/docs/gitignore.
+
 # todo
 Since the app uses plain HTML, CSS and JS, it does not require Node.js(simply double click on app/index.html). To serve files when deploying, a server is required and hence, 
 
@@ -27,5 +30,7 @@ The project is preconfigured with a number of npm helper scripts to make it easy
 
 npm start: Start a local development web server.
 
-# prerequisite
-Read HTML, CSS, JS from w3school and https://help.github.com/articles/set-up-git/ and lookup git init, clone, add, commmit, push.
+# Improvements Required
+Object Oriented approach to better formalize js.
+Create a CSS template of your own that includes most of your acquired knowledge to act as your framework.
+Hard coded data regarding members to be changed into a template that asks for add members.

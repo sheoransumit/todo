@@ -26,3 +26,6 @@ Note the todo project is setup to install and run these utilities via npm script
 The project is preconfigured with a number of npm helper scripts to make it easy to run the common tasks that you will need while developing:
 
 npm start: Start a local development web server.
+
+# prerequisite
+Read HTML, CSS, JS from w3school and https://help.github.com/articles/set-up-git/ and lookup git init, clone, add, commmit, push.

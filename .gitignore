@@ -13,3 +13,4 @@ e2e-tests/
 .jshintrc
 .travis.yml
 karma.conf.js
+fullpackage.txt

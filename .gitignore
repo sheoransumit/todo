@@ -1,1 +1,15 @@
-**/node_modules
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+view1_test.js
+view2_test.js
+version/
+index-async.html
+e2e-tests/
+.jshintrc
+.travis.yml
+karma.conf.js

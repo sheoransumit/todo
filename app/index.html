@@ -1,111 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h3>Task Manager</h3>
-    <form id="myForm">
-    <div class="row">
-      <div class= "col-3"><input type="text" name="title" placeholder="Title*" required></div>
-      <div class= "col-3"><input type="date" name="duedate" placeholder="Due Date*" required></div>
-      <div class= "col-3">    
-        <select id="employeeList">
-          <option value="none" name="member">Select Employee</option>
-        </select> 
-      </div>
-      <div class= "col-3">
-        <select id="statusMarker">
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-10"><textarea name="description" rows="3" placeholder="Describe project here..."></textarea></div>
-      <div class="col-2">
-        <button onclick="save()">Save</button>
-        <p>*required</p>
-      </div>
-    </div>
-    </form>
-    <div class="row">
-      <div class="col-12">
-        <ul class="tab">
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'pending')" id="defaultOpen">Pending</a></li>
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'doing')">Doing</a></li>
-          <li><a href="javascript:void(0)" class="tablinks" onclick="openTasks(event, 'done')">Done</a></li>
-        </ul>
-        <div id="pending" class="tabcontent">
-          <table>
-            <thead>
-              <tr>
-                <th class="due">Date</th>
-                <th class="title">Title</th>
-                <th class="employee">Assigned To</th>
-                <th class="desc">Description</th>
-                <th class="options">Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="due"></td>
-                <td class="title"></td>
-                <td class="employee"></td>
-                <td class="desc"></td>
-                <td class="options"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="doing" class="tabcontent">
-          <table>
-            <thead>
-              <tr>
-                <th class="due">Date</th>
-                <th class="title">Title</th>
-                <th class="employee">Assigned To</th>
-                <th class="desc">Description</th>
-                <th class="options">Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="due"></td>
-                <td class="title"></td>
-                <td class="employee"></td>
-                <td class="desc"></td>
-                <td class="options"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="done" class="tabcontent">  
-          <table>
-            <thead>
-              <tr>
-                <th class="due">Date</th>
-                <th class="title">Title</th>
-                <th class="employee">Assigned To</th>
-                <th class="desc">Description</th>
-                <th class="options">Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="due"></td>
-                <td class="title"></td>
-                <td class="employee"></td>
-                <td class="desc"></td>
-                <td class="options"></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <script src="scripts/main.js"></script>
-  </body>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> AngularJS: Todo App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/view2">view2</a></li>
+  </ul>z
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view></div>
+
+<!--   <div>Angular seed app: v<span app-version></span></div>
+ -->
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+<!--  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+-->
+</body>
 </html>

@@ -1,0 +1,30 @@
+<!-- <p>This is the partial for view 1.</p> -->
+<form name="taskForm">
+	<input type="text" name="taskTitle" placeholder="Title" ng-model="task.title" required>
+	<span ng-show="taskForm.taskTitle.$touched && taskForm.taskTitle.$invalid">Required</span>
+	<input type="date" name="dueDate" ng-model="task.dueon" placeholder="Due Date" required>
+	<span ng-show="taskForm.dueDate.$touched && taskForm.dueDate.$invalid">Required</span>
+	<select ng-model="task.selectedEmployee" ng-options="employee for employee in employees"></select>
+	<select ng-model="task.selectedState" ng-options="state for state in states"></select>
+	<!-- <select id="employeeList">
+	<option ng-repeat="state in states" value="{{state}}">{{state}}</option>
+	</select> -->
+	<textarea name="description" ng-model="task.description" rows="3" placeholder="Describe project here..."></textarea>
+	<button ng-click="reset()">RESET</button>
+</form>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Date</th>
+		<th>Assigned To</th>
+		<th>Status</th>
+		<th>Description</th>
+	</tr>
+	<tr ng-repeat="task in tasks">
+		<td>{{ task.title }}</td>
+		<td>{{ task.dueon }}</td>
+		<td>{{ task.selectedEmployee }}</td>
+		<td>{{ task.selectedState }}</td>
+		<td>{{ task.description }}</td>
+	</tr>
+</table>

@@ -1,38 +1,56 @@
 <!-- <p>This is the partial for view 1.</p> -->
+<h2>Tasks</h2>
+<div class="row addNewTask">
 <form name="taskForm">
-	<input type="text" name="taskTitle" placeholder="Title" ng-model="task.title" required>
-	<span ng-show="taskForm.taskTitle.$touched && taskForm.taskTitle.$invalid">Required</span>
-	<input type="date" name="dueDate" ng-model="task.dueon" placeholder="Due Date" required>
-	<span ng-show="taskForm.dueDate.$touched && taskForm.dueDate.$invalid">Required</span>
-	<select ng-model="task.selectedEmployee" ng-options="employee for employee in employees"><option value="" selected="selected">Assigned to</option></select>
-	<select ng-init="task.selectedState = states[0]" ng-model="task.selectedState" ng-options="state for state in states"></select>
+	<input class="col-4" type="text" name="taskTitle" placeholder="Title" ng-model="task.title" required>
+	<span class="col-2" ng-show="taskForm.taskTitle.$invalid">Required</span>
+	<span class="col-2" ng-show="taskForm.taskTitle.$valid"></span>
+	<input class="col-4" type="date" name="dueDate" ng-model="task.dueon" placeholder="Due Date" required>
+	<span class="col-2" ng-show="taskForm.dueDate.$invalid">Required</span>
+	<span class="col-2" ng-show="taskForm.dueDate.$valid"></span>
+	<select class="col-4" ng-model="task.selectedEmployee" ng-options="employee for employee in employees"><option value="" selected="selected">Assigned to</option></select>
+	<span class="col-2"></span>
+	<select class="col-4" ng-init="task.selectedState = states[0]" ng-model="task.selectedState" ng-options="state for state in states"></select>
+	<span class="col-2"></span>
 	<!-- <select id="employeeList">
 	<option ng-repeat="state in states" value="{{state}}">{{state}}</option>
 	</select> -->
-	<textarea name="description" ng-model="task.description" rows="3" placeholder="Describe project here..."></textarea>
-	<button ng-click="addItem()">Add</button>
+	<textarea class="col-6" name="description" ng-model="task.description" rows="3" placeholder="Describe project here..."></textarea>
+	<span class="col-2"></span>
+	<span class="col-2">
+		<span class="col-12"></span>
+		<button class="col-12" ng-click="addItem()">Add</button>
+	</span>
+	<span class="col-2"></span>
 </form>
+</div>
+
 <!-- <p>{{errortext}}</p> -->
+<div class="row filterTasks">
+<span class="col-2"><b>Filter:</b></span>
+<select class="col-4" ng-model="filterState" ng-options="state for state in states"><option value="" selected="selected">Filter by State</option></select>
+<button class="col-2" ng-click="filtered()">Filter</button>
+<button class="col-2" ng-click="reset()">Reset</button>
+<span class="col-2"></span>
+</div>
 
-<select ng-model="filterState" ng-options="state for state in states"><option value="" selected="selected">Filter by State</option></select>
-<button ng-click="filtered()">Filter</button>
-<button ng-click="reset()">Reset</button>
-
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Date</th>
-		<th>Assigned To</th>
-		<th>Status</th>
-		<th>Description</th>
-		<th>Actions</th>
-	</tr>
-	<tr ng-repeat="task in domTasks">
-		<td>{{ task.title | uppercase }}</td>
-		<td>{{ task.dueon | date: 'mediumDate' }}</td>
-		<td>{{ task.selectedEmployee }}</td>
-		<td>{{ task.selectedState }}</td>
-		<td>{{ task.description }}</td>
-		<td><button ng-click="editItem($index)">Edit</button>&nbsp;<span ng-click="removeItem($index)">&times;</span></td>
-	</tr>
-</table>
+<div class="row withOverflow">
+	<table style="width:100%;">
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Assigned To</th>
+			<th>Status</th>
+			<th>Description</th>
+			<th>Actions</th>
+		</tr>
+		<tr ng-repeat="task in domTasks">
+			<td>{{ task.title | uppercase }}</td>
+			<td>{{ task.dueon | date: 'mediumDate' }}</td>
+			<td>{{ task.selectedEmployee }}</td>
+			<td>{{ task.selectedState }}</td>
+			<td>{{ task.description }}</td>
+			<td><button ng-click="editItem($index)">Edit</button>&nbsp;<span ng-click="removeItem($index)">&times;</span></td>
+		</tr>
+	</table>
+</div>

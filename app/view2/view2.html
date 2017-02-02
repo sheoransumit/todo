@@ -2,9 +2,15 @@
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
 </p> -->
-<h1>Members</h1>
-<input type="text" placeholder="Member Name" ng-model="member">
-<button ng-click="addMember()">Add Member</button>
-<ol>
-	<li ng-repeat="member in members">{{member}}<button ng-click="editMember($index)">Edit</button>&nbsp;<span ng-click="removeMember($index)">&times;</span></li>
-</ol>
+<h2>Members</h2>
+<div class="row">
+<input class="col-6" type="text" placeholder="Member Name" ng-model="member">
+<span class="col-2"></span>
+<button class="col-2" ng-click="addMember()">Add Member</button>
+<span class="col-2"></span>
+</div>
+<div class="row withOverflow">
+	<ol>
+		<li ng-repeat="member in members">{{member}}<button ng-click="editMember($index)">Edit</button>&nbsp;<span ng-click="removeMember($index)">&times;</span></li>
+	</ol>
+</div>

@@ -6,5 +6,5 @@
 <input type="text" placeholder="Member Name" ng-model="member">
 <button ng-click="addMember()">Add Member</button>
 <ol>
-	<li ng-repeat="member in members">{{member}}<button ng-click="editMember($index)">Edit</button><span ng-click="removeMember($index)">&times;</span></li>
+	<li ng-repeat="member in members">{{member}}<button ng-click="editMember($index)">Edit</button>&nbsp;<span ng-click="removeMember($index)">&times;</span></li>
 </ol>

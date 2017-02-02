@@ -22,10 +22,12 @@ angular.module('myApp.view2', ['ngRoute'])
     }
     $scope.editMember = function (x) {
         $scope.member = $scope.members[x];
-        $scope.members.splice(x, 1);
+        // $scope.members.splice(x, 1);
+        Members.editMember(x);
     }
     $scope.removeMember = function (x) {
         Members.deleteMember(x);
+        // $scope.members.splice(x, 1);
     }
 });
 // Doubt : myApp.members was provided to myApp only, how is it accessible from myApp.view2 without giving it as provider and if it is why are we providing ngRoute?

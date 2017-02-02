@@ -4,14 +4,20 @@
 	<span ng-show="taskForm.taskTitle.$touched && taskForm.taskTitle.$invalid">Required</span>
 	<input type="date" name="dueDate" ng-model="task.dueon" placeholder="Due Date" required>
 	<span ng-show="taskForm.dueDate.$touched && taskForm.dueDate.$invalid">Required</span>
-	<select ng-model="task.selectedEmployee" ng-options="employee for employee in employees"></select>
-	<select ng-model="task.selectedState" ng-options="state for state in states"></select>
+	<select ng-model="task.selectedEmployee" ng-options="employee for employee in employees"><option value="" selected="selected">Assigned to</option></select>
+	<select ng-init="task.selectedState = states[0]" ng-model="task.selectedState" ng-options="state for state in states"></select>
 	<!-- <select id="employeeList">
 	<option ng-repeat="state in states" value="{{state}}">{{state}}</option>
 	</select> -->
 	<textarea name="description" ng-model="task.description" rows="3" placeholder="Describe project here..."></textarea>
-	<button ng-click="reset()">RESET</button>
+	<button ng-click="addItem()">Add</button>
 </form>
+<!-- <p>{{errortext}}</p> -->
+
+<select ng-model="filterState" ng-options="state for state in states"><option value="" selected="selected">Filter by State</option></select>
+<button ng-click="filtered()">Filter</button>
+<button ng-click="reset()">Reset</button>
+
 <table>
 	<tr>
 		<th>Title</th>
@@ -19,12 +25,14 @@
 		<th>Assigned To</th>
 		<th>Status</th>
 		<th>Description</th>
+		<th>Actions</th>
 	</tr>
-	<tr ng-repeat="task in tasks">
-		<td>{{ task.title }}</td>
-		<td>{{ task.dueon }}</td>
+	<tr ng-repeat="task in domTasks">
+		<td>{{ task.title | uppercase }}</td>
+		<td>{{ task.dueon | date: 'mediumDate' }}</td>
 		<td>{{ task.selectedEmployee }}</td>
 		<td>{{ task.selectedState }}</td>
 		<td>{{ task.description }}</td>
+		<td><button ng-click="editItem($index)">Edit</button>&nbsp;<span ng-click="removeItem($index)">&times;</span></td>
 	</tr>
 </table>

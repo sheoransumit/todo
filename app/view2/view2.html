@@ -4,13 +4,16 @@
 </p> -->
 <h2>Members</h2>
 <div class="row">
-<input class="col-6" type="text" placeholder="Member Name" ng-model="member">
-<span class="col-2"></span>
-<button class="col-2" ng-click="addMember()">Add Member</button>
-<span class="col-2"></span>
+	<input class="col-6" type="text" placeholder="Name" ng-model="member.name">
+	<input class="col-6" type="text" placeholder="E-mail" ng-model="member.email">
+	<input class="col-6" type="text" placeholder="Phone" ng-model="member.phone">
+	<span class="col-2"></span>
+	<button class="col-2" ng-click="addMember()">Add Member</button>
+	<span class="col-2"></span>
 </div>
-<div class="row withOverflow">
+<!-- <div class="row withOverflow">
 	<ol>
 		<li ng-repeat="member in members">{{member}}<button ng-click="editMember($index)">Edit</button>&nbsp;<span ng-click="removeMember($index)">&times;</span></li>
 	</ol>
-</div>
+</div> -->
+	<div ui-grid="{ data: myData }" class="myGrid"></div>
